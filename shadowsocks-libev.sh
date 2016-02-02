@@ -185,10 +185,10 @@ function iptables_set(){
 # Install 
 function install(){
     # Build and Install shadowsocks-libev
-    if [ -s /usr/local/bin/ss-server ];then
-        echo "shadowsocks-libev has been installed!"
-        exit 0
-    else
+    #if [ -s /usr/local/bin/ss-server ];then
+     #   echo "shadowsocks-libev has been installed!"
+      #  exit 0
+    #else
         ./configure
         make && make install
         if [ $? -eq 0 ]; then
@@ -209,7 +209,7 @@ function install(){
             echo "Shadowsocks-libev install failed! Please visit https://teddysun.com/357.html and contact."
             exit 1
         fi
-    fi
+    #fi
     cd $cur_dir
     # Delete shadowsocks-libev floder
     rm -rf $cur_dir/shadowsocks-libev-master/
